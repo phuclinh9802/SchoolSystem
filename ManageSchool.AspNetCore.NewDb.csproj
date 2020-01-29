@@ -1,0 +1,46 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App">
+      <PrivateAssets Condition="'%(PackageReference.Version)' == ''">all</PrivateAssets>
+      <Publish Condition="'%(PackageReference.Version)' == ''">true</Publish>
+    </PackageReference>
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="2.2.4" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
+    <PackageReference Include="Omu.AwesomeMvc.Trial" Version="6.0.1" />
+    <PackageReference Include="Omu.SampleData" Version="1.0.1" />
+    <PackageReference Include="Microsoft.Owin" Version="3.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="Views\ClassContext\Delete.cshtml" />
+    <Content Remove="wwwroot\js\utils.js" />
+    <Content Remove="Views\StudentPopUp\Index.cshtml" />
+    <Content Remove="Views\Login\Index.cshtml" />
+    <Content Remove="Login.NewDb\Pages\Index.cshtml" />
+    <Content Remove="Login.NewDb\Pages\_ViewImports.cshtml" />
+    <Content Remove="Login.NewDb\Pages\_ViewStart.cshtml" />
+    <Content Remove="Login.NewDb\Pages\Shared\_CookieConsentPartial.cshtml" />
+    <Content Remove="Login.NewDb\Pages\Shared\_Layout.cshtml" />
+    <Content Remove="Login.NewDb\Pages\Shared\_ValidationScriptsPartial.cshtml" />
+    <Content Remove="Login.NewDb\Properties\launchSettings.json" />
+    <Content Remove="Login.Db\Views\_ViewImports.cshtml" />
+    <Content Remove="Login.Db\Views\Shared\_ValidationScriptsPartial.cshtml" />
+    <Content Remove="Login.Db\Views\Shared\_Layout.cshtml" />
+    <Content Remove="Login.Db\Views\Shared\Error.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Views\Register\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Views\Home\" />
+    <Folder Include="Views\Register\" />
+  </ItemGroup>
+</Project>

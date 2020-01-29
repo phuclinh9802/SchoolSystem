@@ -1,0 +1,64 @@
+﻿@model IEnumerable<ManageSchool.AspNetCore.NewDb.Models.EntireModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Information of Classes</h1>
+    <p>This is the most overall table of classes</p>
+</div>
+<script>
+    function AddParameter(classId) {
+        var classId = window.open('/Pop/' + classId ,
+                                    width =500,height=250);
+        return false;
+    }
+</script>
+
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ClassId)
+            </th>
+            <th>                 @Html.DisplayNameFor(model => model.ClassName)             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Location)
+            </th>
+            <th>                 @Html.DisplayNameFor(model => model.NumberStudents)             </th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model != null)
+        {
+
+        @foreach (var item in Model)
+        {
+            @if (item.ClassId != null && String.IsNullOrEmpty(item.ClassId.ToString()) == false)
+            {
+
+                <tr>
+                    <td>@item.ClassId.ToString()</td>
+                    <td>@item.ClassName</td>
+                    <td>@item.Location</td>
+                    <td><div><a href="#" onClick="return AddParameter('@item.ClassId.ToString()')">@item.NumberStudents.ToString()</a></div></td>
+                </tr>
+            }
+
+        }
+        }
+
+    </tbody>
+</table>
+@*@using (Html.BeginForm("Action", "Controller", FormMethod.Get, new { target = "_blank" }))
+    {
+        <script type="text/javascript">
+           window.open("localhost:5001/Student");
+        </script>
+    }*@
+
