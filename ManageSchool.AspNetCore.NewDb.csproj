@@ -16,7 +16,7 @@
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="Omu.AwesomeMvc.Trial" Version="6.0.1" />
     <PackageReference Include="Omu.SampleData" Version="1.0.1" />
-    <PackageReference Include="Microsoft.Owin" Version="3.0.1" />
+    <PackageReference Include="Microsoft.Owin" Version="4.1.1" />
   </ItemGroup>
 
   <ItemGroup>
